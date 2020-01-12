@@ -17,6 +17,11 @@ namespace FrienOrganizer.DataAccess
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+
+            modelBuilder.Entity<Friend>()
+                .Property(f => f.FirstName)
+                .IsRequired()
+                .HasMaxLength(50);
         }
     }
 }
