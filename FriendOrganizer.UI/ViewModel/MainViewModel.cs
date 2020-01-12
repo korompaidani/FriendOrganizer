@@ -1,7 +1,6 @@
 ﻿using FriendOrganizer.Model;
 using FriendOrganizer.UI.Data;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
 
 namespace FriendOrganizer.UI.ViewModel
 {
@@ -10,11 +9,12 @@ namespace FriendOrganizer.UI.ViewModel
         private IFriendDataService _friendDataService;
         private Friend _selectedFriend;
 
-        public event PropertyChangedEventHandler PropertyChanged;  
-
         public Friend SelectedFriend
         {
-            get { return _selectedFriend; }
+            get
+            {
+                return _selectedFriend;
+            }
             set
             {
                 _selectedFriend = value;
