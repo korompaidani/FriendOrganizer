@@ -17,19 +17,7 @@ namespace FrienOrganizer.DataAccess
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
-
-            modelBuilder.Configurations.Add(new FriendConfiguration());
-        }
-    }
-
-    public class FriendConfiguration : EntityTypeConfiguration<Friend>
-    {
-        public FriendConfiguration()
-        {
-            Property(f => f.FirstName)
-                .IsRequired()
-                .HasMaxLength(50);
+            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();            
         }
     }
 }
